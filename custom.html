@@ -58,6 +58,10 @@
                 zoom: 13, // Zoom level
                 container: "viewDiv" // Div element
             });
+            const favPlacesLayer = new FeatureLayer ({
+                url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/favorite_places_in_vancouver/FeatureServer/0"
+            });
+            map.add(favPlacesLayer);
         });
     </script>
   </head>

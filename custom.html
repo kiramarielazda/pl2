@@ -128,16 +128,6 @@
                 labelingInfo: [activitiesLabels]
             });
             map.add(favPlacesLayer);
-            const legend = new Legend({
-            view: view,
-            layerInfos: [
-                {
-                layer: favPlacesLayer
-                }
-            ]
-            });
-
-            view.ui.add(legend, "bottom-left");
         });
     </script>
   </head>

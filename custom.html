@@ -53,15 +53,7 @@
 
                 ]
             });
-            const map = new Map({
-                basemap: basemap,
-            });
-            const view = new MapView({
-                map: map,
-                center: [-123.119, 49.284], // Longitude, latitude
-                zoom: 12, // Zoom level
-                container: "viewDiv" // Div element
-            });
+            
             
             const restoSym = {
                 type: "simple-marker",
@@ -127,10 +119,29 @@
             };*/
             const favPlacesLayer = new FeatureLayer ({
                 url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/favorite_places_in_vancouver/FeatureServer/0",
-                /*renderer: activityRenderer,
-                labelingInfo: [activitiesLabels]*/
+                renderer: activityRenderer,
+                title: "Date Night in Vancouver!"
+                /*labelingInfo: [activitiesLabels]*/
             });
-            map.add(favPlacesLayer);
+            const map = new Map({
+                basemap: basemap,
+                layers: [favPlacesLayer]
+            });
+            const view = new MapView({
+                map: map,
+                center: [-123.119, 49.284], // Longitude, latitude
+                zoom: 12, // Zoom level
+                container: "viewDiv" // Div element
+            });
+            const legend = new Legend({
+                view:view,
+                layerInfos:[
+                    {
+                        layer: favPlacesLayer
+                    }
+                ]
+            });
+            view.ui.add(legend, "bottom-left");
         });
     </script>
   </head>

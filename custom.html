@@ -55,24 +55,21 @@
             });
             
             
-            const restoSym = {
-                type: "simple-marker",
+            const restoSym = new SimpleMarkerSymbol({
+                style: "round",
                 color: "#290409",
-                width: "18px",
-                height: "18px"
-            };
-            const parkSym = {
-                type: "simple-marker",
+                size: "12px"
+            });
+            const parkSym = new SimpleMarkerSymbol({
+                style: "round",
                 color: "#479147",
-                width: "18px",
-                height: "18px"
-            };
-            const venueSym = {
-                type: "simple-marker",
+                size: "12px"
+            });
+            const venueSym = new SimpleMarkerSymbol({
+                style: "round",
                 color: "#5892bf",
-                width: "18px",
-                height: "18px"
-            };
+                size: "12px"
+            });
 
             const activityRenderer = {
                 type: "unique-value", // autocasts as new UniqueValueRenderer()

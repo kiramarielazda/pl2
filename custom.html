@@ -75,31 +75,39 @@
                 symbol: restoSym
             }
 
-            /*const activityRenderer = {
+            const activityRenderer = {
                 type: "unique-value", // autocasts as new UniqueValueRenderer()
                 legendOptions: {
                     title: "Best Valentine's Activities in Vancouver!"
                 },
                 field: "Activity", 
-                uniqueValueInfos: [
-                    {
-                        value: "Restaurant", // code for interstates/freeways
-                        symbol: restoSym,
-                        label: "Restaurant" // used in the legend to describe features with this symbol
-                    },
-                    {
-                        value: "Park", // code for U.S. highways
-                        symbol: parkSym,
-                        label: "Park" // used in the legend to describe features with this symbol
-                    },
-                    {
-                        value: "Venue", // code for U.S. highways
-                        symbol: venueSym,
-                        label: "Venue" // used in the legend to describe features with this symbol
-                    },
-                ]
+                uniqueValueInfos: [{
+                    value: "Restaurant", // code for interstates/freeways
+                    label: "Restaurant",
+                    symbol: {
+                        type: "simple-marker",
+                        color: "#290409",
+                        size: "12px"
+                    }
+                }, {
+                    value: "Park",
+                    label: "Park",
+                    symbol: {
+                        type: "simple-marker",
+                        color: "#479147",
+                        size: "12px"
+                    }
+                }, {
+                    value: "Venue",
+                    label: "Venue",
+                    symbol: {
+                        type: "simple-marker",
+                        color: "#5892bf",
+                        size: "12px"
+                    }
+                }]
             };
-            const activitiesLabels = {
+            /*const activitiesLabels = {
                 symbol: {
                 type: "text",
                 color: "#FFFFFF",
@@ -120,7 +128,7 @@
             };*/
             const favPlacesLayer = new FeatureLayer ({
                 url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/favorite_places_in_vancouver/FeatureServer/0",
-                renderer: myRenderer,
+                renderer: activityRenderer,
                 title: "Date Night in Vancouver!"
                 /*labelingInfo: [activitiesLabels]*/
             });

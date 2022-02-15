@@ -53,6 +53,7 @@
             });
             const map = new Map({
                 basemap: basemap,
+                layers: [favPlacesLayer]
             });
             const view = new MapView({
                 map: map,
@@ -128,17 +129,16 @@
                 renderer: activityRenderer,
                 labelingInfo: [activitiesLabels]
             });
-            map.add(favPlacesLayer);
-        const legend = new Legend({
-          view: view,
-          layerInfos: [
-            {
-              layer: favPlacesLayer
-            }
-          ]
-        });
+            const legend = new Legend({
+            view: view,
+            layerInfos: [
+                {
+                layer: favPlacesLayer
+                }
+            ]
+            });
 
-        view.ui.add(legend, "bottom-left");
+            view.ui.add(legend, "bottom-left");
       });
     </script>
   </head>

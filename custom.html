@@ -71,7 +71,7 @@
                 size: "12px"
             });
 
-            const activityRenderer = {
+            /*const activityRenderer = {
                 type: "unique-value", // autocasts as new UniqueValueRenderer()
                 legendOptions: {
                     title: "Best Valentine's Activities in Vancouver!"
@@ -95,7 +95,7 @@
                     },
                 ]
             };
-            /*const activitiesLabels = {
+            const activitiesLabels = {
                 symbol: {
                 type: "text",
                 color: "#FFFFFF",
@@ -116,7 +116,7 @@
             };*/
             const favPlacesLayer = new FeatureLayer ({
                 url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/favorite_places_in_vancouver/FeatureServer/0",
-                renderer: activityRenderer,
+                /*renderer: activityRenderer,*/
                 title: "Date Night in Vancouver!"
                 /*labelingInfo: [activitiesLabels]*/
             });

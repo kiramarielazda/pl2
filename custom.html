@@ -26,12 +26,14 @@
             "esri/Basemap",
             "esri/layers/VectorTileLayer",
             "esri/layers/TileLayer",
-            "esri/layers/FeatureLayer"
-        ], function (esriConfig,Map, MapView, Basemap, VectorTileLayer, TileLayer, FeatureLayer) {
+            "esri/layers/FeatureLayer",
+            "esri/renderers/UniqueValueRenderer",
+            "esri/symbols/SimpleMarkerSymbol"
+        ], function (esriConfig,Map, MapView, Basemap, VectorTileLayer, TileLayer, FeatureLayer, UniqueValueRenderer) {
             esriConfig.apiKey = "AAPK8f7e214363974083ae7673506c2686e4ev7nRu7qIr4hHFKLn2CWd9yulVo4KoRQ2-uYUTIKNUEy7DyAZE6k-4UGYA9BSG1N";
             const vectorTileLayer = new VectorTileLayer({
                 portalItem: {
-                id: "484eaf59f8654016b6af3dd7362acabb" // Forest and Parks Canvas
+                id: "484eaf59f8654016b6af3dd7362acabb" // My custom "Valentine" basemap that I made in AGOL
                 },
                 opacity: .80
             });
@@ -61,19 +63,19 @@
             });
             
             const restoSym = {
-                "type": "simple",
+                "type": "simple-marker",
                 "color": "#290409",
                 "width": "18px",
                 "height": "18px"
             };
             const parkSym = {
-                "type": "simple",
+                "type": "simple-marker",
                 "color": "#479147",
                 "width": "18px",
                 "height": "18px"
             };
             const venueSym = {
-                "type": "simple",
+                "type": "simple-marker",
                 "color": "#5892bf",
                 "width": "18px",
                 "height": "18px"

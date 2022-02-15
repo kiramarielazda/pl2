@@ -70,6 +70,10 @@
                 color: "#5892bf",
                 size: "12px"
             });
+            const myRenderer = {
+                type: "simple",
+                symbol: restoSym
+            }
 
             /*const activityRenderer = {
                 type: "unique-value", // autocasts as new UniqueValueRenderer()
@@ -116,7 +120,7 @@
             };*/
             const favPlacesLayer = new FeatureLayer ({
                 url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/favorite_places_in_vancouver/FeatureServer/0",
-                /*renderer: activityRenderer,*/
+                renderer: myRenderer,
                 title: "Date Night in Vancouver!"
                 /*labelingInfo: [activitiesLabels]*/
             });

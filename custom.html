@@ -54,78 +54,25 @@
                 ]
             });
             
-            
-            const restoSym = new SimpleMarkerSymbol({
-                style: "round",
-                color: "#290409",
-                size: "12px"
-            });
-            const parkSym = new SimpleMarkerSymbol({
-                style: "round",
-                color: "#479147",
-                size: "12px"
-            });
-            const venueSym = new SimpleMarkerSymbol({
-                style: "round",
-                color: "#5892bf",
-                size: "12px"
-            });
-            const myRenderer = {
-                type: "simple",
-                symbol: restoSym
-            }
             var renderer = new UniqueValueRenderer({
                 field: "Activity",
-                defaultSymbol: new SimpleMarkerSymbol()
             });
             renderer.addUniqueValueInfo(0,
                 new SimpleMarkerSymbol({
-                    color: "blue"
+                    color: "#290409"
                 })
             );
             renderer.addUniqueValueInfo(1,
                 new SimpleMarkerSymbol({
-                    color: "green"
+                    color: "#479147"
                 })
             );
             renderer.addUniqueValueInfo(2,
                 new SimpleMarkerSymbol({
-                    color: "red"
+                    color: "#5892bf"
                 })
             );                    
-            const activityRenderer = {
-                type: "unique-value", // autocasts as new UniqueValueRenderer()
-                legendOptions: {
-                    title: "Best Valentine's Activities in Vancouver!"
-                },
-                field: "Activity", 
-                uniqueValueInfos: [{
-                    value: "Restaurant", // code for interstates/freeways
-                    label: "Restaurant",
-                    symbol: {
-                        type: "simple-fill",
-                        color: "#290409",
-                        size: "12px"
-                    }
-                }, {
-                    value: "Park",
-                    label: "Park",
-                    symbol: {
-                        type: "simple-fill",
-                        color: "#479147",
-                        size: "12px"
-                    }
-                }, {
-                    value: "Venue",
-                    label: "Venue",
-                    symbol: {
-                        type: "simple-fill",
-                        color: "#5892bf",
-                        size: "12px"
-                    }
-                }]
-            };
-            /*const activitiesLabels = {
+            const activitiesLabels = {
                 symbol: {
                 type: "text",
                 color: "#FFFFFF",
@@ -143,12 +90,12 @@
                 labelExpressionInfo: {
                 expression: "$feature.Name"
                 }
-            };*/
+            };
             const favPlacesLayer = new FeatureLayer ({
                 url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/favorite_places_in_vancouver/FeatureServer/0",
                 renderer: renderer,
-                title: "Date Night in Vancouver!"
-                /*labelingInfo: [activitiesLabels]*/
+                title: "Celebrate Valentine's Day in Vancouver!",
+                labelingInfo: [activitiesLabels]
             });
             const map = new Map({
                 basemap: basemap,

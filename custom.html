@@ -29,7 +29,7 @@
             "esri/layers/FeatureLayer",
             "esri/renderers/UniqueValueRenderer",
             "esri/symbols/SimpleMarkerSymbol"
-        ], function (esriConfig,Map, MapView, Basemap, VectorTileLayer, TileLayer, FeatureLayer, UniqueValueRenderer) {
+        ], function (esriConfig,Map, MapView, Basemap, VectorTileLayer, TileLayer, FeatureLayer, UniqueValueRenderer, SimpleMarkerSymbol) {
             esriConfig.apiKey = "AAPK8f7e214363974083ae7673506c2686e4ev7nRu7qIr4hHFKLn2CWd9yulVo4KoRQ2-uYUTIKNUEy7DyAZE6k-4UGYA9BSG1N";
             const vectorTileLayer = new VectorTileLayer({
                 portalItem: {
@@ -62,7 +62,7 @@
                 container: "viewDiv" // Div element
             });
             
-            const restoSym = {
+            /*const restoSym = {
                 "type": "simple-marker",
                 "color": "#290409",
                 "width": "18px",
@@ -101,8 +101,8 @@
                     label: "Venue" // used in the legend to describe features with this symbol
                     },
                 ]
-            };
-            const activitiesLabels = {
+            };*/
+            /*const activitiesLabels = {
                 symbol: {
                 type: "text",
                 color: "#FFFFFF",
@@ -120,11 +120,11 @@
                 labelExpressionInfo: {
                 expression: "$feature.Name"
                 }
-            };
+            };*/
             const favPlacesLayer = new FeatureLayer ({
                 url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/favorite_places_in_vancouver/FeatureServer/0",
-                renderer: activityRenderer,
-                labelingInfo: [activitiesLabels]
+                /*renderer: activityRenderer,
+                labelingInfo: [activitiesLabels]*/
             });
             map.add(favPlacesLayer);
         });

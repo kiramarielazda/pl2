@@ -27,7 +27,6 @@
             "esri/layers/VectorTileLayer",
             "esri/layers/TileLayer",
             "esri/layers/FeatureLayer",
-            "esri/widgets/Legend"
         ], function (esriConfig,Map, MapView, Basemap, VectorTileLayer, TileLayer, FeatureLayer, Legend) {
             esriConfig.apiKey = "AAPK8f7e214363974083ae7673506c2686e4ev7nRu7qIr4hHFKLn2CWd9yulVo4KoRQ2-uYUTIKNUEy7DyAZE6k-4UGYA9BSG1N";
             const vectorTileLayer = new VectorTileLayer({
@@ -53,7 +52,6 @@
             });
             const map = new Map({
                 basemap: basemap,
-                layers: [favPlacesLayer]
             });
             const view = new MapView({
                 map: map,

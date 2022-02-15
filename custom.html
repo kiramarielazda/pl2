@@ -59,8 +59,39 @@
                 zoom: 13, // Zoom level
                 container: "viewDiv" // Div element
             });
+            
+            const activitiesRenderer = {
+                "type": "simple",
+                "symbol": {
+                "type": "picture-marker",
+                "url": "http://static.arcgis.com/images/Symbols/NPS/npsPictograph_0231b.png",
+                "width": "18px",
+                "height": "18px"
+                }
+            }
+            const activitiesLabels = {
+                symbol: {
+                type: "text",
+                color: "#FFFFFF",
+                haloColor: "#5E8D74",
+                haloSize: "2px",
+                font: {
+                    size: "12px",
+                    family: "Noto Sans",
+                    style: "italic",
+                    weight: "normal"
+                }
+                },
+
+                labelPlacement: "above-center",
+                labelExpressionInfo: {
+                expression: "$feature.Name"
+                }
+            };
             const favPlacesLayer = new FeatureLayer ({
-                url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/favorite_places_in_vancouver/FeatureServer/0"
+                url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/favorite_places_in_vancouver/FeatureServer/0",
+                renderer: activitiesRenderer,
+                labelingInfo: [activitiesLabels]
             });
             map.add(favPlacesLayer);
         });

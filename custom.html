@@ -129,6 +129,7 @@
                 renderer: activityRenderer,
                 labelingInfo: [activitiesLabels]
             });
+            map.add(favPlacesLayer);
             const legend = new Legend({
             view: view,
             layerInfos: [
@@ -139,7 +140,7 @@
             });
 
             view.ui.add(legend, "bottom-left");
-      });
+        });
     </script>
   </head>
   <body>

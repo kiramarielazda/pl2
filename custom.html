@@ -74,7 +74,25 @@
                 type: "simple",
                 symbol: restoSym
             }
-
+            var renderer = new UniqueValueRenderer({
+                field: "Activity",
+                defaultSymbol: new SimpleMarkerSymbol()
+            });
+            renderer.addUniqueValueInfo(0,
+                new SimpleMarkerSymbol({
+                    color: "blue"
+                })
+            );
+            renderer.addUniqueValueInfo(1,
+                new SimpleMarkerSymbol({
+                    color: "green"
+                })
+            );
+            renderer.addUniqueValueInfo(2,
+                new SimpleMarkerSymbol({
+                    color: "red"
+                })
+            );                    
             const activityRenderer = {
                 type: "unique-value", // autocasts as new UniqueValueRenderer()
                 legendOptions: {
@@ -128,7 +146,7 @@
             };*/
             const favPlacesLayer = new FeatureLayer ({
                 url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/favorite_places_in_vancouver/FeatureServer/0",
-                renderer: activityRenderer,
+                renderer: renderer,
                 title: "Date Night in Vancouver!"
                 /*labelingInfo: [activitiesLabels]*/
             });

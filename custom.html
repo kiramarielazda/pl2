@@ -84,12 +84,16 @@
                 uniqueValueInfos: [{
                     value: "Restaurant", // code for interstates/freeways
                     label: "Restaurant",
-                    symbol: getUniqueValueSymbol("https://developers.arcgis.com/javascript/latest/sample-code/visualization-point-styles/live/Restaurant.png","#290409")
+                    symbol: {
+                        type: "simple-fill",
+                        color: "#290409",
+                        size: "12px"
+                    }
                 }, {
                     value: "Park",
                     label: "Park",
                     symbol: {
-                        type: "simple-marker",
+                        type: "simple-fill",
                         color: "#479147",
                         size: "12px"
                     }
@@ -97,7 +101,7 @@
                     value: "Venue",
                     label: "Venue",
                     symbol: {
-                        type: "simple-marker",
+                        type: "simple-fill",
                         color: "#5892bf",
                         size: "12px"
                     }

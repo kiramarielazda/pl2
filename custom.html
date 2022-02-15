@@ -60,15 +60,46 @@
                 container: "viewDiv" // Div element
             });
             
-            const activitiesRenderer = {
+            const restoSym = {
                 "type": "simple",
-                "symbol": {
-                "type": "picture-marker",
-                "url": "http://static.arcgis.com/images/Symbols/NPS/npsPictograph_0231b.png",
+                "color": "#290409",
                 "width": "18px",
                 "height": "18px"
-                }
-            }
+            };
+            const parkSym = {
+                "type": "simple",
+                "color": "#479147",
+                "width": "18px",
+                "height": "18px"
+            };
+            const venueSym = {
+                "type": "simple",
+                "color": "#5892bf",
+                "width": "18px",
+                "height": "18px"
+            };
+
+            const activityRenderer = {
+                type: "unique-value", // autocasts as new UniqueValueRenderer()
+                field: "Activity", 
+                uniqueValueInfos: [
+                    {
+                    value: 0, // code for interstates/freeways
+                    symbol: restoSym,
+                    label: "Restaurant" // used in the legend to describe features with this symbol
+                    },
+                    {
+                    value: "1", // code for U.S. highways
+                    symbol: parkSym,
+                    label: "Park" // used in the legend to describe features with this symbol
+                    },
+                    {
+                    value: "2", // code for U.S. highways
+                    symbol: venueSym,
+                    label: "Venue" // used in the legend to describe features with this symbol
+                    },
+                ]
+            };
             const activitiesLabels = {
                 symbol: {
                 type: "text",
@@ -90,7 +121,7 @@
             };
             const favPlacesLayer = new FeatureLayer ({
                 url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/favorite_places_in_vancouver/FeatureServer/0",
-                renderer: activitiesRenderer,
+                renderer: activityRenderer,
                 labelingInfo: [activitiesLabels]
             });
             map.add(favPlacesLayer);

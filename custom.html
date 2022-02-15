@@ -28,8 +28,9 @@
             "esri/layers/TileLayer",
             "esri/layers/FeatureLayer",
             "esri/renderers/UniqueValueRenderer",
-            "esri/symbols/SimpleMarkerSymbol"
-        ], function (esriConfig,Map, MapView, Basemap, VectorTileLayer, TileLayer, FeatureLayer, UniqueValueRenderer, SimpleMarkerSymbol) {
+            "esri/symbols/SimpleMarkerSymbol",
+            "esri/widgets/Legend"
+        ], function (esriConfig,Map, MapView, Basemap, VectorTileLayer, TileLayer, FeatureLayer, UniqueValueRenderer, SimpleMarkerSymbol, Legend) {
             esriConfig.apiKey = "AAPK8f7e214363974083ae7673506c2686e4ev7nRu7qIr4hHFKLn2CWd9yulVo4KoRQ2-uYUTIKNUEy7DyAZE6k-4UGYA9BSG1N";
             const vectorTileLayer = new VectorTileLayer({
                 portalItem: {
@@ -62,46 +63,49 @@
                 container: "viewDiv" // Div element
             });
             
-            /*const restoSym = {
-                "type": "simple-marker",
-                "color": "#290409",
-                "width": "18px",
-                "height": "18px"
+            const restoSym = {
+                type: "simple-marker",
+                color: "#290409",
+                width: "18px",
+                height: "18px"
             };
             const parkSym = {
-                "type": "simple-marker",
-                "color": "#479147",
-                "width": "18px",
-                "height": "18px"
+                type: "simple-marker",
+                color: "#479147",
+                width: "18px",
+                height: "18px"
             };
             const venueSym = {
-                "type": "simple-marker",
-                "color": "#5892bf",
-                "width": "18px",
-                "height": "18px"
+                type: "simple-marker",
+                color: "#5892bf",
+                width: "18px",
+                height: "18px"
             };
 
             const activityRenderer = {
                 type: "unique-value", // autocasts as new UniqueValueRenderer()
+                legendOptions: {
+                    title: "Best Valentine's Activities in Vancouver!"
+                },
                 field: "Activity", 
                 uniqueValueInfos: [
                     {
-                    value: "Restaurant", // code for interstates/freeways
-                    symbol: restoSym,
-                    label: "Restaurant" // used in the legend to describe features with this symbol
+                        value: "Restaurant", // code for interstates/freeways
+                        symbol: restoSym,
+                        label: "Restaurant" // used in the legend to describe features with this symbol
                     },
                     {
-                    value: "Park", // code for U.S. highways
-                    symbol: parkSym,
-                    label: "Park" // used in the legend to describe features with this symbol
+                        value: "Park", // code for U.S. highways
+                        symbol: parkSym,
+                        label: "Park" // used in the legend to describe features with this symbol
                     },
                     {
-                    value: "Venue", // code for U.S. highways
-                    symbol: venueSym,
-                    label: "Venue" // used in the legend to describe features with this symbol
+                        value: "Venue", // code for U.S. highways
+                        symbol: venueSym,
+                        label: "Venue" // used in the legend to describe features with this symbol
                     },
                 ]
-            };*/
+            };
             /*const activitiesLabels = {
                 symbol: {
                 type: "text",
